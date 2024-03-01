@@ -1,5 +1,6 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
-
+import GithubSlugger from 'github-slugger';
+import readingTime from 'reading-time';
 const Blog = defineDocumentType(() => ({
   name: 'Blog',
   filePathPattern: `**/**/*.mdx`,
@@ -50,6 +51,10 @@ const Blog = defineDocumentType(() => ({
     url: {
       type: 'string',
       resolve: (doc) => `/blogs/${doc._raw.flattenedPath}`,
+    },
+    readingTime: {
+      type: 'json',
+      resolve: (doc) => readingTime(doc.body.raw),
     },
   },
 }));

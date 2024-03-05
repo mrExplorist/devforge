@@ -1,10 +1,8 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
+
 import GithubSlugger from 'github-slugger';
 import readingTime from 'reading-time';
-import remarkGfm from 'remark-gfm';
-import rehypeSlug from 'rehype-slug';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypePrettyCode from 'rehype-pretty-code';
+
 const Blog = defineDocumentType(() => ({
   name: 'Blog',
   filePathPattern: `**/**/*.mdx`,
@@ -91,8 +89,4 @@ const codeOptions = {
 export default makeSource({
   contentDirPath: 'content',
   documentTypes: [Blog],
-  mdx: {
-    remarkPlugins: [remarkGfm],
-    rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'append' }], [rehypePrettyCode, codeOptions]],
-  },
 });

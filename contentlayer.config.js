@@ -1,6 +1,7 @@
 import { defineDocumentType, makeSource } from 'contentlayer/source-files';
 
 import GithubSlugger from 'github-slugger';
+import readingTime from 'reading-time';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
@@ -58,7 +59,10 @@ const Blog = defineDocumentType(() => ({
       type: 'string',
       resolve: (doc) => `/blogs/${doc._raw.flattenedPath}`,
     },
-
+    readingTime: {
+      type: 'json',
+      resolve: (doc) => readingTime(doc.body.raw),
+    },
     toc: {
       type: 'json',
       resolve: async (doc) => {

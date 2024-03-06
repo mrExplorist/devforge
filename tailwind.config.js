@@ -71,6 +71,15 @@ module.exports = {
         code: ['var(--font-code)'],
         in: ['var(--font-in)'],
       },
+      animation: {
+        roll: 'roll 24s linear infinite',
+      },
+      keyframes: {
+        roll: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+      },
       backgroundImage: {
         'dot-white': 'radial-gradient(white 1px, transparent 1px)',
         'dot-black': 'radial-gradient(black 1px, transparent 1px)',

@@ -3,6 +3,22 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Skills from '@/src/components/About/Skills';
 import avatar from '@/src/assets/hero/robot.jpg';
+export const metadata = {
+  metadataBase: new URL('https://bitstack.com'),
+  alternates: {
+    canonical: '/about',
+    languages: {
+      'en-US': '/en-US',
+    },
+  },
+  title: 'Bitstack — About',
+  description: 'Learn more about Bitstack and the rationale behind its creation.',
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+  },
+};
 
 export default function About() {
   return (

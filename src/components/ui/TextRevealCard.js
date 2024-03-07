@@ -1,8 +1,10 @@
 'use client';
-import React, { useEffect, useRef, useState, memo } from 'react';
+
+import React, { memo, useEffect, useRef, useState } from 'react';
+
+import { cn } from '@/src/utils';
 import { motion } from 'framer-motion';
 import { twMerge } from 'tailwind-merge';
-import { cn } from '@/src/utils';
 
 export const TextRevealCard = ({ text, revealText, children, className }) => {
   const [widthPercentage, setWidthPercentage] = useState(0);
@@ -86,7 +88,7 @@ export const TextRevealCard = ({ text, revealText, children, className }) => {
         ></motion.div>
 
         <div className=" overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,white,transparent)]">
-          <p className="text-base sm:text-[3rem] py-10 font-bold bg-clip-text text-transparent bg-[#323238]">{text}</p>
+          <p className="text-base sm:text-[3rem] py-10 font-bold bg-clip-text text-light-gray bg-[#323238]">{text}</p>
           <MemoizedStars />
         </div>
       </div>

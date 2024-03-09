@@ -88,7 +88,9 @@ export const TextRevealCard = ({ text, revealText, children, className }) => {
         ></motion.div>
 
         <div className=" overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,white,transparent)]">
-          <p className="text-base sm:text-[3rem] py-10 font-bold bg-clip-text text-light-gray bg-[#323238]">{text}</p>
+          <p className="max-lg:text-4xl sm:text-6xl py-10 font-bold bg-clip-text text-light-gray bg-[#323238]">
+            {text}
+          </p>
           <MemoizedStars />
         </div>
       </div>
@@ -97,7 +99,7 @@ export const TextRevealCard = ({ text, revealText, children, className }) => {
 };
 
 export const TextRevealCardTitle = ({ children, className }) => {
-  return <h2 className={twMerge('text-white text-lg mb-2', className)}>{children}</h2>;
+  return <h2 className={twMerge('text-white text-lg mb-2 h2', className)}>{children}</h2>;
 };
 
 export const TextRevealCardDescription = ({ children, className }) => {

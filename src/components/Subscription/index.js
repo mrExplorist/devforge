@@ -30,19 +30,19 @@ const Subscription = () => {
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="mt-6 w-fit sm:min-w-[384px] md:flex items-stretch bg-light dark:bg-dark p-1 sm:p-2 rounded mx-4 z-1"
+          className="mt-6 w-fit sm:min-w-[384px] md:flex space-y-5 items-stretch bg-light dark:bg-dark p-1 sm:p-2 rounded mx-4 z-1"
         >
           <input
             type="email"
             placeholder="Enter your email"
             {...register('email', { required: true, maxLength: 80 })}
-            className="w-full outline-none bg-transparent  border-b-2 border-light-gray  text-accent mr-2 pb-1 px-2 "
+            className="w-full outline-none bg-transparent  border-b-2 border-light-gray hover:border-color-accent text-accent mr-2 pb-1 px-2 "
           />
 
           <input
             type="submit"
             value="Subscribe"
-            className="bg-dark dark:bg-light text-light dark:text-dark px-4 py-1 rounded cursor-pointer hover:scale-105 transition-all ease duration-200"
+            className="  hover:text-color-accent px-4 py-1  rounded cursor-pointer hover:scale-105 transition-all ease duration-200 border-2 border-dim-gray hover:border-color-accent text-light-gray"
           />
         </form>
         {/* <div className="flex items-center mt-8 text-n-6">

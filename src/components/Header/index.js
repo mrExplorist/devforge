@@ -9,11 +9,9 @@ import Image from 'next/image';
 import Logo from './Logo';
 import { cx } from '@/src/utils';
 import { socials } from '@/src/constants';
-import { useThemeSwitch } from '@/src/hooks/useThemeSwitch';
 
 const Header = () => {
   const [openNavigation, setOpenNavigation] = useState(false);
-  const [mode, setMode] = useThemeSwitch();
 
   const toggleNavigation = () => {
     if (openNavigation) {
@@ -72,20 +70,14 @@ const Header = () => {
                 key={item.id}
                 href={item.url}
                 target="_blank"
-                className="flex items-center justify-center w-10 h-10 bg-n-7 rounded-full transition-colors hover:bg-n-6 "
+                className="flex items-center justify-center md:w-10 h-5 w-5 md:h-10 bg-n-7 rounded-full transition-colors hover:bg-n-6 "
               >
-                <Image src={item.iconUrl} alt={item.title} className="h-6 w-6" />
+                <Image src={item.iconUrl} alt={item.title} className="h-5 w-5" />
               </a>
             ))}
-            <button
-              className={cx(
-                'ease flex items-center justify-center rounded-full p-1',
-                mode === 'light' ? 'bg-dark text-light' : 'bg-light text-dark',
-              )}
-              aria-label="theme-switcher"
-            >
-              {mode === 'light' ? <MoonIcon className={'fill-dark'} /> : <SunIcon className={'fill-dark'} />}
-            </button>{' '}
+            <button className={cx('ease flex items-center justify-center  rounded-full ')} aria-label="theme-switcher">
+              <SunIcon className={'fill-color-dark'} />
+            </button>
           </ul>
         </div>
       </div>

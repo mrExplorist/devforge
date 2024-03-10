@@ -15,9 +15,11 @@ const HomeCoverSection = ({ blogs }) => {
 
   return (
     <div className="w-full top-12 inline-block relative py-4 ">
-      <article className="flex flex-col items-start justify-end mx-5 sm:mx-10 h-[56vh] md:h-[72vh] md:mx-24 relative bg-bg/60">
+      <article className="flex flex-col items-start justify-end mx-5 sm:mx-10 h-[60vh] sm:h-[85vh] md:mx-24 relative bg-bg/60">
+        <div className="absolute top-0 left-0 right-0 bottom-0 h-full bg-bg/50 " />
+
         <div className="absolute top-0 left-0 max-w-full z-0 w-full">
-          <Image className="w-full" src={grid} alt="Grid" width={500} height={420} />
+          <Image className="" src={grid} alt="Grid" width={500} height={280} />
         </div>
 
         <Image
@@ -26,7 +28,7 @@ const HomeCoverSection = ({ blogs }) => {
           blurDataURL={blog.image.blurhashDataUrl}
           alt={blog.title}
           fill
-          className="w-full h-full object-center object-cover rounded-3xl -z-10 opacity-60"
+          className="w-full h-full object-center object-cover rounded-3xl -z-10 opacity-60 "
           sizes="100vw"
           priority
         />

@@ -1,33 +1,36 @@
 'use client';
 
-import { IconPlus } from '@tabler/icons-react';
 // Note: This component is used to filter resources by category
 import { useRouter, useSearchParams } from 'next/navigation';
+
+import { IconPlus } from '@tabler/icons-react';
 import { useState } from 'react';
 
-// ... (other imports)
-
-export default function TabButtons({ categories }) {
+export default function TabButtons({ categories, currentSlug, allBlogs }) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState(false);
 
   const categoryCount = {};
-  categories.forEach((resource) => {
-    const categoryItem = resource.fields.category.fields.category;
-    categoryCount[categoryItem] = (categoryCount[categoryItem] || 0) + 1;
-  });
 
   // Extract category from the URL query
-  const activeCategory = searchParams.get('category') || '';
+  categories.forEach((cat) => {
+    const blogs = allBlogs.filter((blog) => {
+      return blog.tags.includes(cat);
+    });
+    const categoryItem = categories.find((item) => item === cat);
+    categoryCount[categoryItem] = blogs.length;
+  });
+
+  const activeCategory = currentSlug;
 
   const handleCategoryChange = (category) => {
     setIsOpen(false);
-    router.push(`/?category=${category}`, { scroll: false });
+    router.push(`/blogs/categories/${category}`, { scroll: false });
   };
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-white p-4 flex justify-center gap-x-2 gap-y-2 sm:hidden z-50">
+    <div className="fixed bottom-0 left-0 right-0  p-4  flex justify-center gap-x-2 gap-y-2 sm:hidden z-50">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`py-4 px-4 flex gap-x-1 font-bold border bg-dark-charcoal border-dim-gray rounded-md hover:border-text transition-all text-sm items-center w-full justify-between ${
@@ -45,7 +48,7 @@ export default function TabButtons({ categories }) {
         border-dim-gray bg-dark-charcoal p-4 m-4 flex rounded-md flex-col gap-y-2 "
         >
           <button
-            onClick={() => handleCategoryChange('')}
+            onClick={() => handleCategoryChange('all')}
             className={`py-4 px-4 flex gap-x-1 font-medium rounded border border-transparent hover:border-dim-gray transition-all text-sm ${
               activeCategory === '' ? 'bg-accent text-bg' : ' bg-bg text-accent'
             }`}

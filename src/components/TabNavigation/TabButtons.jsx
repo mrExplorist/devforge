@@ -2,30 +2,37 @@
 
 // Note: This component is used to filter resources by category
 import { useRouter, useSearchParams } from 'next/navigation';
+
 import { motion } from 'framer-motion';
+import { slug } from 'github-slugger';
 
-// ... (other imports)
-
-export default function TabButtons({ categories }) {
+export default function TabButtons({ categories, currentSlug, allBlogs }) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
   const categoryCount = {};
-  categories.forEach((resource) => {
-    const categoryItem = resource.fields.category.fields.category;
-    categoryCount[categoryItem] = (categoryCount[categoryItem] || 0) + 1;
+
+  //   find no of blogs for that categoryCount based on tags of blogs
+
+  categories.forEach((cat) => {
+    const blogs = allBlogs.filter((blog) => {
+      return blog.tags.includes(cat);
+    });
+    const categoryItem = categories.find((item) => item === cat);
+    categoryCount[categoryItem] = blogs.length;
   });
 
-  // Extract category from the URL query
-  const activeCategory = searchParams.get('category') || '';
+  const activeCategory = currentSlug;
+
+  // Extract category from the URL query;
 
   return (
-    <div className="mb-8 sticky top-6 z-50 justify-center gap-x-2 flex-wrap gap-y-2 hidden sm:flex">
+    <div className="mt-4 sticky top-24 z-50 justify-center gap-x-2 flex-wrap gap-y-2 hidden sm:flex">
       {/* Filtering button for "All" category */}
       <button
         aria-label="All categories"
         onClick={() => {
-          router.push('/', { scroll: false });
+          router.push('/blogs/categories/all', { scroll: false });
         }}
         className={`py-2 px-4 flex gap-x-1 font-medium items-center border border-dim-gray  rounded-xl hover:border-text transition-all text-sm xl:text-h6 ${
           activeCategory === '' ? 'bg-accent text-bg' : 'bg-bg text-accent'
@@ -40,7 +47,7 @@ export default function TabButtons({ categories }) {
               key={item}
               onClick={(e) => {
                 e.preventDefault();
-                router.push(`/?category=${item}`, { scroll: false });
+                router.push(`/blogs/categories/${item}`, { scroll: false });
               }}
               className={`py-2 px-5 flex gap-x-1 font-medium  rounded-xl  transition-all relative ${
                 activeCategory === item ? '' : '   hover:text-gray'

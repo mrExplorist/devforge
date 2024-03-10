@@ -21,9 +21,9 @@ export const BentoGridItem = ({ className, title, description, header, icon, tag
         <div className="flex items-center justify-between">
           {icon}
           {tag && (
-            <div className="font-grotesk font-bold text-neutral-600 dark:text-neutral-200 mb-2 mt-2 capitalize">
+            <span className="font-grotesk font-bold text-neutral-600 dark:text-neutral-200 mb-2 mt-2 capitalize">
               {tag}
-            </div>
+            </span>
           )}
         </div>
 

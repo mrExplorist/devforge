@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 const Collaboration = () => {
   return (
-    <div className=" container lg:flex pt-20 w-full md:pb-10 mt-10 py-10 lg:py-16 xl:py-20 border-customGray">
+    <div className=" container lg:flex pt-20 w-full md:pb-10 mt-10 py-10 lg:py-16 xl:py-20 border-customGray ">
       <div className="">
         <h2 className="h2 mb-4 md:mb-8 w-3/4 ">
           For developers who want to stand out and become{' '}
@@ -29,7 +29,7 @@ const Collaboration = () => {
         <Button>Try it now</Button>
       </div>
 
-      <div className="lg:ml-auto xl:w-[38rem] mt-4">
+      <div className="lg:ml-auto xl:w-[38rem]  mt-4">
         <p className="body-2 mb-8 text-neutral-400 md:mb-16 lg:mb-32 lg:w-[22rem] lg:mx-auto">{collabText}</p>
 
         <div className="relative left-1/2 flex w-[22rem] aspect-square border border-neutral-600 rounded-full -translate-x-1/2 scale:75 md:scale-100">
@@ -45,7 +45,7 @@ const Collaboration = () => {
             {collabApps.map((app, index) => (
               <li
                 key={app.id}
-                className={`absolute top-0 left-1/2 h-1/2 -ml-[1.6rem] origin-bottom rotate-${index * 45}`}
+                className={`absolute top-0  left-1/2 h-1/2 -ml-[1.6rem] origin-bottom rotate-${index * 45}`}
               >
                 <div
                   className={`relative -top-[1.6rem] flex w-[3.2rem] h-[3.2rem] bg-[#15131D] border border-neutral-600 rounded-xl -rotate-${

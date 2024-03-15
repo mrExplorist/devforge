@@ -8,6 +8,7 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class',
   theme: {
     display: [
       'clamp(2.75rem, 4.25vw, 4.5rem)',
@@ -21,10 +22,12 @@ module.exports = {
       colors: {
         transparent: 'transparent',
         bg: '#0C0D0E',
+        lightDark: '#131313',
         'dark-charcoal': '#101214',
         'super-dark-gray': '#1A1A1A',
         'dim-gray': '#555555',
-        'light-gray': '#878787',
+        'light-gray': '#9ca3af',
+        customGray: '#62646C',
         gray: '#D1D1D1',
         accent: '#F7F7F7',
         text: '#CCCCCC',
@@ -43,8 +46,24 @@ module.exports = {
           dark: '#1b1b1b',
           light: '#fff',
           accent: '#7B00D3',
+          accentBlue: '#4B8AFF',
           accentDark: '#ffdb4d',
           gray: '#747474',
+        },
+        light: {
+          1: '#FCFAEF',
+          2: '#CAFFEF',
+          3: '#E3E3E3',
+          'accent-blue': '#3042FB',
+          5: '#A4FF00',
+          6: '#C8C7C6',
+          7: '#8F8F8F',
+          8: '#6F6F6F',
+          9: '#4D4D4D',
+          10: '#333333',
+          11: '#1E1E1E',
+          12: '#0F0F0F',
+          13: '#000000',
         },
         stroke: {
           1: '#26242C',
@@ -73,17 +92,22 @@ module.exports = {
       },
       animation: {
         roll: 'roll 24s linear infinite',
+        gradient: 'gradient 6s linear infinite',
       },
       keyframes: {
         roll: {
           '0%': { transform: 'translateX(100%)' },
           '100%': { transform: 'translateX(-100%)' },
         },
+        gradient: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '100%': { backgroundPosition: '100% 50%' },
+        },
       },
       backgroundImage: {
         'dot-white': 'radial-gradient(white 1px, transparent 1px)',
         'dot-black': 'radial-gradient(black 1px, transparent 1px)',
-        'conic-gradient': 'conic-gradient(from 225deg, #FFC876, #79FFF7, #9F53FF, #FF98E2, #FFC876)',
+        'conic-gradient': 'conic-gradient(from 225deg, #D1D1D1, #79FFF7, #9F53FF, #FF98E2, #D1D1D1)',
       },
       lineHeight: {
         base: '150%',
@@ -162,6 +186,9 @@ module.exports = {
         },
         '.button': {
           '@apply font-code text-xs font-bold uppercase tracking-wider': {},
+        },
+        '.gradient-text': {
+          '@apply bg-clip-text text-transparent': {},
         },
       });
       addUtilities({

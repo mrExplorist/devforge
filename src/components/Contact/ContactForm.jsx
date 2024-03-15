@@ -1,6 +1,7 @@
 'use client';
 
 import Button from '../ui/Button';
+import { IconArrowUpRight } from '@tabler/icons-react';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -53,8 +54,8 @@ export default function ContactForm() {
       <Button>
         <input
           type="submit"
-          value="send request"
-          className="mt-8 font-medium inline-block capitalize text-lg sm:text-xl py-2 sm:py-3 px-6 esm:px-8 border-2 border-solid border-light-gray hover:border-color-1  rounded cursor-pointer"
+          value={<IconArrowUpRight />}
+          className="mt-8 inline-block font-medium uppercase text-lg sm:text-xl py-2 sm:py-3 px-6 esm:px-8 border-2 border-solid border-light-gray hover:border-color-1  rounded cursor-pointer  gap-2"
         />
       </Button>
     </form>

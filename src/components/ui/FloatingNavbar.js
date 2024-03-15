@@ -1,6 +1,7 @@
 'use client';
 
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from 'framer-motion';
+import { IconBook2, IconBuildingBroadcastTower, IconLibrary } from '@tabler/icons-react';
 import React, { useState } from 'react';
 
 import Link from 'next/link';
@@ -42,7 +43,7 @@ export const FloatingNav = ({ navItems, className }) => {
           duration: 0.2,
         }}
         className={cn(
-          'flex max-w-fit fixed  md:top-12 max-lg:top-10 inset-x-0 mx-auto border border-transparent dark:border-white/20  rounded-full dark:bg-black bg-white shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] py-4 px-6 items-center justify-center space-x-4',
+          'flex max-w-fit fixed  md:top-12 max-lg:top-10 inset-x-0 mx-auto border border-transparent dark:border-white/20 font-mono bg-lightDark rounded-full  shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] py-4 px-6 items-center justify-center space-x-4',
           className,
         )}
       >
@@ -51,15 +52,18 @@ export const FloatingNav = ({ navItems, className }) => {
             key={`link=${idx}`}
             href={navItem.link}
             className={cn(
-              'relative text-white items-center flex space-x-1  dark:hover:text-neutral-300 hover:text-neutral-500',
+              'relative text-white items-center flex space-x-1  dark:hover:text-neutral-300 hover:text-neutral-500 uppercase text-sm',
             )}
           >
-            <span className="block sm:hidden">{navItem.icon}</span>
-            <span className="hidden sm:block text-sm font-sans hover:border-b border-color-accent">{navItem.name}</span>
+            <span className="block sm:hidden text-white">{navItem.icon}</span>
+            <span className="hidden sm:block text-xs font-mono hover:border-b border-color-accent">{navItem.name}</span>
           </Link>
         ))}
-        <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white rounded-lg">
-          <span>Words</span>
+        <button className="border text-xs font-medium relative border-lightDark dark:border-white/[0.2]  text-white rounded-lg uppercase   ">
+          <span className="block sm:hidden text-neutral-300">
+            <IconBook2 />
+          </span>
+          <span className="sm:block hidden">Resources</span>
           <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
         </button>
       </motion.div>

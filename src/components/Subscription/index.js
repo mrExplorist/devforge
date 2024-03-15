@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { MemoizedStars } from '../ui/TextRevealCard';
 import React from 'react';
 import { grid } from '@/src/assets';
 import { useForm } from 'react-hook-form';
@@ -15,15 +16,16 @@ const Subscription = () => {
   console.log(errors);
 
   return (
-    <div className="container md:pb-10 mt-10 py-10 lg:py-16 xl:py-20 border border-super-dark-gray">
+    <div className="container md:pb-10 mt-10 py-10 lg:py-16 xl:py-20 border border-super-dark-gray rounded-2xl">
       <div className="relative rounded-2xl bg-dark dark:bg-n-8 m-2 sm:m-10 flex flex-col items-center text-light dark:text-dark py-8 border-2 border-n-6 z-999">
+        <MemoizedStars />
         <div className="absolute top-0 left-0 max-w-full z-0 w-full">
           <Image className="" src={grid} alt="Grid" width={500} height={280} />
         </div>
-        <h3 className="h4 mt-16 font-medium dark:font-bold text-center capitalize  px-4">
+        <h3 className="h2 mt-16 font-medium dark:font-bold text-center capitalize  px-4">
           Interesting Stories | Updates | Guides
         </h3>
-        <p className="mt-5 px-4 text-center w-full sm:w-3/5 font-light dark:font-medium text-sm sm:text-base body-2 text-n-4">
+        <p className="mt-5 px-4 text-center w-full sm:w-3/5 font-light dark:font-medium text-me sm:text-base body-2 text-n-4">
           Subscribe to learn about new technology and updates. Join over 5000+ members community to stay up to date with
           latest news.
         </p>

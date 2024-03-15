@@ -10,7 +10,7 @@ const Logo = () => {
         <div className="overflow-hidden items-center flex justify-center md:w-[64px] md:h-[64px] ">
           <Image src={BlogLogo} alt="BitStack" className="hidden md:block" />
         </div>{' '}
-        <span className="flex  ml-0 text-lg md:text-xl">&copy; devforge</span>
+        <span className="flex ml-0 text-lg md:text-2xl font-extrabold uppercase"> devforge</span>
       </div>
     </Link>
   );

@@ -10,7 +10,6 @@ import siteMetadata from '../utils/siteMetadata';
 
 const sora = Sora({
   subsets: ['latin'],
-  display: 'swap',
   variable: '--font-sora',
 });
 const inter = Inter({
@@ -74,7 +73,7 @@ export default function RootLayout({ children }) {
           code.variable,
           sora.variable,
           inter.variable,
-          'font-sans bg-bg pt-4 section-padding ',
+          'font-sans bg-bg section-padding ',
         )}
       >
         <Header />

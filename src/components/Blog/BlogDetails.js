@@ -7,7 +7,7 @@ import ViewsCounter from './ViewsCounter';
 
 const BlogDetails = ({ blog, slug: blogSlug }) => {
   return (
-    <div className="md:px-10 bg-color-accent dark:bg-dark-charcoal  text-color-light py-2 flex items-center justify-around flex-wrap text-lg sm:text-xl font-medium mx-5  md:mx-10 rounded-lg border border-dark-charcoal">
+    <div className="md:px-10 bg-dark-charcoal  text-color-light py-2 flex items-center justify-around flex-wrap text-lg sm:text-xl font-medium mx-5  md:mx-10 rounded-lg border border-dark-charcoal">
       <time className="m-3 flex gap-3">
         <IconCalendar />
         {format(parseISO(blog.publishedAt), 'LLLL d, yyyy')}

@@ -53,8 +53,8 @@ export const SunIcon = ({ className, ...rest }) => (
       <set attributeName="opacity" begin="0.6s" to="0" />
     </g>
     <mask id="lineMdMoonFilledToSunnyFilledLoopTransition0">
-      <circle cx="12" cy="12" r="12" fill="#fff" />
-      <circle cx="18" cy="6" r="12" fill="#fff">
+      <circle cx="12" cy="12" r="12" fill="#757185" />
+      <circle cx="18" cy="6" r="12" fill="#757185">
         <animate fill="freeze" attributeName="cx" begin="0.6s" dur="0.4s" values="18;22" />
         <animate fill="freeze" attributeName="cy" begin="0.6s" dur="0.4s" values="6;2" />
         <animate fill="freeze" attributeName="r" begin="0.6s" dur="0.4s" values="12;3" />
@@ -196,8 +196,8 @@ export const LinkedinIcon = ({ className, ...rest }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={42}
-      height={43}
+      width={32}
+      height={33}
       viewBox="0 0 42 43"
       className={cx('w-full h-auto', className)}
       {...rest}
@@ -225,8 +225,8 @@ export const TwitterIcon = ({ className, ...rest }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={42}
-      height={43}
+      width={32}
+      height={33}
       viewBox="0 0 42 43"
       className={cx('w-full h-auto', className)}
       {...rest}
@@ -250,15 +250,15 @@ export const GithubIcon = ({ className, ...rest }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={42}
-      height={44}
+      width={32}
+      height={33}
       viewBox="0 0 42 44"
       className={cx('w-full h-auto', className)}
       {...rest}
     >
       <path
         fillRule="evenodd"
-        fill="#fff"
+        fill="#666"
         d="M21 1.739c-10.942 0-19.815 9.212-19.815 20.577 0 9.091 5.678 16.804 13.55 19.525.99.191 1.354-.446 1.354-.99 0-.49-.018-2.111-.027-3.83-5.512 1.244-6.675-2.428-6.675-2.428-.902-2.379-2.2-3.011-2.2-3.011-1.799-1.277.135-1.25.135-1.25 1.99.144 3.038 2.12 3.038 2.12 1.767 3.145 4.635 2.236 5.766 1.71.177-1.33.691-2.238 1.258-2.752-4.401-.52-9.028-2.284-9.028-10.168 0-2.247.774-4.082 2.042-5.524-.206-.518-.885-2.61.191-5.445 0 0 1.664-.553 5.45 2.11A18.325 18.325 0 0 1 21 11.688c1.683.008 3.38.236 4.963.693 3.782-2.663 5.444-2.11 5.444-2.11 1.079 2.834.4 4.928.195 5.445 1.27 1.442 2.039 3.277 2.039 5.524 0 7.903-4.635 9.643-9.048 10.153.711.638 1.345 1.891 1.345 3.81 0 2.754-.023 4.97-.023 5.647 0 .548.357 1.19 1.36.987 7.87-2.724 13.54-10.434 13.54-19.522 0-11.364-8.872-20.577-19.815-20.577Z"
         clipRule="evenodd"
       />

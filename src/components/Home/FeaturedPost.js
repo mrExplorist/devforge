@@ -82,7 +82,11 @@ const FeaturedPost = ({ blogs }) => {
                 )
               }
               tag={
-                <Tag link={`/categories/${blog.tags[0]}`} name={blog.tags[0]} className="w-fit text-xs capitalize" />
+                <Tag
+                  link={`/blogs/categories/${blog.tags[0]}`}
+                  name={blog.tags[0]}
+                  className="w-fit text-xs capitalize"
+                />
               }
               date={format(new Date(blog.publishedAt), 'MMM dd, yyyy')}
               className={i === 3 || i === 6 ? 'md:col-span-2' : ''}

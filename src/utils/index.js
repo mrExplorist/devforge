@@ -1,7 +1,8 @@
 // TODO: Add more utility functions here
 
 import { compareDesc, parseISO } from 'date-fns';
-import { ClassValue, clsx } from 'clsx';
+
+import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
 // Function to merge Tailwind CSS classes together

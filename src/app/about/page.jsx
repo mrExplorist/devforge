@@ -25,7 +25,7 @@ export default function About() {
     <>
       <div className="mt-32 flex-col flex lg:grid lg:grid-cols-12 px-8">
         <div className="md:text-7xl text-6xl col-span-4 font-bold">
-          <h1 className="mb-8 px-4 lg:px-8">
+          <h1 className="mb-8 md:px-4 lg:px-8">
             About <span className="text-light-gray">Devforge</span>
           </h1>
         </div>
